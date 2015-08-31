@@ -62,10 +62,7 @@ def pairs_generator(basket, freq_singles):
     # generate all pair combinations in a given basket
     # only if the the singles comprising the pair are
     # frequent
-    remaining_singles = []
-    for item in basket:
-        if item in freq_singles:
-            remaining_singles.append(item)
+    remaining_singles = [item for item in basket if item in freq_singles]
     # sort ensures we don't have to worry about item order
     # in the pair
     remaining_singles.sort()
